@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .black_btn {
+        @apply rounded-full duration-300 border border-black bg-black py-1.5 px-5 text-white transition-all hover:bg-white hover:text-black text-center text-sm flex items-center justify-center;
+      }
+      .container_default{
+        /* @apply max-w-[1124px] m-auto */
+        @apply lg:max-w-[83.2%] m-auto max-w-[90%]
+        /* @apply max-w-[90.2%] m-auto */
+      }
+    
+}
+
+
+.position_bg_opportunity{
+  background-position: -1000px -353px;
+}
+.position_bg_faq{
+  background-position: -270px -743px;
+}
+
+
+@media screen and (min-width: 768px) {
+  .position_bg_opportunity{
+    background-position: -1000px -354px;
+  }
+  .position_bg_faq{
+  background-position: -254px -800px;
+}
+}
+@media screen and (min-width: 1024px) {
+  .position_bg_opportunity{
+    background-position:  -744px -354px;
+    
+  }
+
+}
+
+
+
+/* grow_box */
+.grow_box {
+  font-size: 1.0em;
+  border-radius: 7px;
+  background: #ffffff;
+  color: rgb(0, 0, 0);
+  padding: 0.85em 0.75em;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  font-weight: 500;
+}
+.grow_box:hover {
+  color: #ffffff;
+}
+.grow_box::after {
+  content: "";
+  
+  background: #2e2e2e;
+  border-radius: 7px;
+  position: absolute;
+  z-index: -1;
+  padding: 0.85em 0.75em;
+  display: block;
+  transition: all 0.2s  ease-in-out;
+}
+
+button.grow_box::after {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transform: scale(0, 0);
+}
+button.grow_box:hover::after {
+  transform: scale(1, 1);
+  
+}
+/* ** */
