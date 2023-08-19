@@ -101,7 +101,7 @@ export const Home = () => {
               </a>
             </div>
             <h2 className="text-6xl md:text-7xl font-semibold">
-              TOGETHER, WE CAN DO ANYTHING.
+              TESTE, WE CAN DO ANYTHING.
             </h2>
             <button
               ref={videoRef}
