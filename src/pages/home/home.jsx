@@ -43,8 +43,42 @@ export const Home = () => {
       document.removeEventListener("click", handleClickOutside);
     };
   }, []);
-  //**
 
+    // Define the etag function outside of the useEffect
+    function etag() {
+      window.dataLayer.push(arguments);
+    }
+
+  useEffect(() => {
+    // Adicionar o script do Google Analytics
+    const script = document.createElement("script");
+    script.src = "https://www.googletagmanager.com/etag/js?id=G-8L657SGG1H";
+    script.async = true;
+  
+    script.onload = () => {
+      window.dataLayer = window.dataLayer || [];
+  
+      // Defina a função etag e configure o ID do Google Analytics
+      window.etag = function() {
+        window.dataLayer.push(arguments);
+      };
+  
+      etag("js", new Date());
+      etag("config", "G-8L657SGG1H");
+    };
+  
+    // Adicionar o script ao head do documento
+    document.head.appendChild(script);
+  
+    // Limpeza do useEffect (remover o script ao desmontar)
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
+  
+  
+
+  
   return (
     <main className=" pt-[100px] md:pt-[110px]">
       <section className=" bg-cover bg-center h-screen w-full bg-hero_home">
