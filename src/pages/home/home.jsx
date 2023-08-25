@@ -52,7 +52,7 @@ export const Home = () => {
   useEffect(() => {
     // Adicionar o script do Google Analytics
     const script = document.createElement("script");
-    script.src = "https://www.googletagmanager.com/etag/js?id=G-3TR57T7W5L";
+    script.src = "https://www.googletagmanager.com/etag/js?id=G-VJ8DS2K246";
     script.async = true;
   
     script.onload = () => {
@@ -64,7 +64,7 @@ export const Home = () => {
       };
   
       etag("js", new Date());
-      etag("config", "G-3TR57T7W5L");
+      etag("config", "G-VJ8DS2K246");
     };
   
     // Adicionar o script ao head do documento
